@@ -30,4 +30,8 @@
         <!-- The characters remaining value for which the counter should be displayed at -->
         <attr name="displayFromCount" format="integer" />
     </declare-styleable>
+
+    <declare-styleable name="DesignTheme">
+        <attr name="textColorError" format="color" />
+    </declare-styleable>
 </resources>

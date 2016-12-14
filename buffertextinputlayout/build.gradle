@@ -21,7 +21,7 @@ android {
 }
 
 dependencies {
-    final SUPPORT_LIBRARY_VERSION = '25.0.1'
+    final SUPPORT_LIBRARY_VERSION = '25.1.0'
     compile "com.android.support:design:$SUPPORT_LIBRARY_VERSION"
     compile fileTree(dir: 'libs', include: ['*.jar'])
 }
