@@ -1,6 +1,8 @@
 Buffer Text Input Layout
 -------------------------
 
+(Coming to maven central soon!)
+
 This is a simple customisation of the TextInputLayout found in the Design Support Library.
 
 Whilst this is an awesome component that we've made great use of, we wanted to be able to display
