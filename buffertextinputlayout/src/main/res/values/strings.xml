@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">BufferTextInputLayout</string>
+
+    <string name="standard_character_counter_pattern" translatable="false">%1$d / %2$d</string>
+</resources>
