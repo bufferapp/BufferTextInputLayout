@@ -6,7 +6,7 @@ This is a simple customisation of the TextInputLayout found in the Design Suppor
 Whilst this is an awesome component that we've made great use of, we wanted to be able to display
 the counter so that the value displayed was:
 
-- Descending
+- Not formatted in the way that the support library version was
 - Only visible when we reach a certain number of characters away from the maximum counter value
 
 Hence why we created this simple component :)
