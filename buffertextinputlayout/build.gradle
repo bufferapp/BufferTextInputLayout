@@ -1,5 +1,4 @@
 apply plugin: 'com.android.library'
-apply from: '../config/quality/quality.gradle'
 
 android {
     compileSdkVersion 25
@@ -19,17 +18,10 @@ android {
         }
     }
 
-    sourceSets {
-        androidTest {
-            java.srcDirs = ['src/androidTest/java']
-            res.srcDirs = ['src/androidTest/res']
-        }
-    }
 }
 
 dependencies {
     final SUPPORT_LIBRARY_VERSION = '25.0.1'
     compile "com.android.support:design:$SUPPORT_LIBRARY_VERSION"
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:25.0.1'
 }
