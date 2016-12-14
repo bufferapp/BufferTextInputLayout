@@ -1,28 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <style name="BufferTextInputLayout" parent="android:Widget">
-        <item name="hintTextAppearance">@style/HintTextAppearance</item>
-        <item name="errorTextAppearance">@style/ErrorTextAppearance</item>
-        <item name="counterTextAppearance">@style/CounterTextAppearance</item>
-        <item name="counterOverflowTextAppearance">@style/OverflowTextAppearance</item>
-    </style>
+        <item name="hintTextAppearance">@style/TextAppearance.Design.Hint</item>
+        <item name="errorTextAppearance">@style/TextAppearance.Design.Error</item>
+        <item name="counterTextAppearance">@style/TextAppearance.Design.Counter</item>
+        <item name="counterOverflowTextAppearance">@style/TextAppearance.Design.Counter.Overflow</item>
 
-    <style name="HintTextAppearance" parent="CaptionTextAppearance">
-        <item name="android:textColor">?android:attr/colorControlActivated</item>
     </style>
-
-    <style name="ErrorTextAppearance" parent="CaptionTextAppearance">
-        <item name="android:textColor">@color/color_design_error</item>
-    </style>
-
-    <style name="CounterTextAppearance" parent="CaptionTextAppearance"/>
-    <style name="OverflowTextAppearance" parent="CaptionTextAppearance">
-        <item name="android:textColor">?android:attr/textColorTertiary</item>
-    </style>
-
-    <style name="CaptionTextAppearance">
-        <item name="android:textSize">12sp</item>
-        <item name="android:textColor">?android:textColorSecondary</item>
-    </style>
-
 </resources>
