@@ -193,8 +193,8 @@ public class BufferTextInputLayout extends LinearLayout {
                 R.styleable.BufferTextInputLayout_counterOverflowTextAppearance, 0);
         counterVisible = counterEnabled;
 
-        int type = a.getInt(R.styleable.BufferTextInputLayout_textInputMode, 2);
-        counterMode = CounterMode.fromId(type);
+        counterMode = CounterMode.fromId(
+                a.getInt(R.styleable.BufferTextInputLayout_counterMode, 2));
 
         charactersRemainingUntilCounterDisplay = a.getInt(
                 R.styleable.BufferTextInputLayout_displayFromCount, getCounterMaxLength());

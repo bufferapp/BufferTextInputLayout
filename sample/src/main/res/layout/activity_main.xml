@@ -24,7 +24,7 @@
             app:counterOverflowTextAppearance="@style/counterOverride"
             app:counterTextAppearance="@style/counterText"
             app:hintEnabled="true"
-            app:textInputMode="ascending">
+            app:counterMode="ascending">
 
             <EditText
                 android:layout_width="match_parent"
@@ -42,7 +42,7 @@
             app:counterOverflowTextAppearance="@style/counterOverride"
             app:counterTextAppearance="@style/counterText"
             app:hintEnabled="true"
-            app:textInputMode="descending">
+            app:counterMode="descending">
 
             <EditText
                 android:layout_width="match_parent"
@@ -60,7 +60,7 @@
             app:counterOverflowTextAppearance="@style/counterOverride"
             app:counterTextAppearance="@style/counterText"
             app:hintEnabled="true"
-            app:textInputMode="standard">
+            app:counterMode="standard">
 
             <EditText
                 android:layout_width="match_parent"
@@ -79,7 +79,7 @@
             app:counterTextAppearance="@style/counterText"
             app:hintEnabled="true"
             app:displayFromCount="5"
-            app:textInputMode="descending">
+            app:counterMode="descending">
 
             <EditText
                 android:layout_width="match_parent"
