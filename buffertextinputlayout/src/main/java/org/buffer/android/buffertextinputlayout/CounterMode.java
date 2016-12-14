@@ -15,18 +15,18 @@
  */
 package org.buffer.android.buffertextinputlayout;
 
-public enum TextInputType {
+public enum CounterMode {
     DESCENDING(0), ASCENDING(1), STANDARD(2);
 
     int id;
 
-    TextInputType(int id) {
+    CounterMode(int id) {
         this.id = id;
     }
 
-    static TextInputType fromId(int id) {
-        for (TextInputType textInputType : values()) {
-            if (textInputType.id == id) return textInputType;
+    static CounterMode fromId(int id) {
+        for (CounterMode counterMode : values()) {
+            if (counterMode.id == id) return counterMode;
         }
         throw new IllegalArgumentException();
     }

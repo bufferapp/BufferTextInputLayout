@@ -21,13 +21,13 @@
         <attr name="android:textColorHint" />
         <!-- Whether to animate hint state changes. -->
         <attr name="hintAnimationEnabled" format="boolean" />
-
+        <!-- The mode to use when formatting the text input layout counter -->
         <attr name="textInputMode" format="enum">
             <enum name="descending" value="0" />
             <enum name="ascending" value="1" />
             <enum name="standard" value="2" />
         </attr>
-
+        <!-- The characters remaining value for which the counter should be displayed at -->
         <attr name="displayFromCount" format="integer" />
     </declare-styleable>
 </resources>

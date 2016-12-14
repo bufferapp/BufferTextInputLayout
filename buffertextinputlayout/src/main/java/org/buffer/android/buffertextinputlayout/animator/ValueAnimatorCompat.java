@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.buffer.android.buffertextinputlayout;
+package org.buffer.android.buffertextinputlayout.animator;
 
 
 import android.support.annotation.NonNull;
@@ -26,7 +26,7 @@ import android.view.animation.Interpolator;
  */
 public class ValueAnimatorCompat {
 
-    interface AnimatorUpdateListener {
+    public interface AnimatorUpdateListener {
         /**
          * <p>Notifies the occurrence of another frame of the animation.</p>
          *
@@ -67,7 +67,7 @@ public class ValueAnimatorCompat {
         impl.start();
     }
 
-    boolean isRunning() {
+    public boolean isRunning() {
         return impl.isRunning();
     }
 
@@ -75,7 +75,7 @@ public class ValueAnimatorCompat {
         impl.setInterpolator(interpolator);
     }
 
-    void addUpdateListener(final AnimatorUpdateListener updateListener) {
+    public void addUpdateListener(final AnimatorUpdateListener updateListener) {
         if (updateListener != null) {
             impl.addUpdateListener(new Impl.AnimatorUpdateListenerProxy() {
                 @Override
@@ -88,11 +88,11 @@ public class ValueAnimatorCompat {
         }
     }
 
-    void setFloatValues(float from, float to) {
+    public void setFloatValues(float from, float to) {
         impl.setFloatValues(from, to);
     }
 
-    float getAnimatedFloatValue() {
+    public float getAnimatedFloatValue() {
         return impl.getAnimatedFloatValue();
     }
 
@@ -100,7 +100,7 @@ public class ValueAnimatorCompat {
         impl.setDuration(duration);
     }
 
-    void cancel() {
+    public void cancel() {
         impl.cancel();
     }
 

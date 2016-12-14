@@ -17,8 +17,8 @@ package org.buffer.android.buffertextinputlayout.util;
 
 import android.support.annotation.NonNull;
 
-import org.buffer.android.buffertextinputlayout.ValueAnimatorCompat;
-import org.buffer.android.buffertextinputlayout.ValueAnimatorCompatImpl;
+import org.buffer.android.buffertextinputlayout.animator.ValueAnimatorCompat;
+import org.buffer.android.buffertextinputlayout.animator.ValueAnimatorCompatImpl;
 
 public class ViewUtils {
 

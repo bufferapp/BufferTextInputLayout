@@ -69,7 +69,9 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import org.buffer.android.buffertextinputlayout.animator.ValueAnimatorCompat;
 import org.buffer.android.buffertextinputlayout.util.AnimationUtils;
+import org.buffer.android.buffertextinputlayout.util.CollapsingTextHelper;
 import org.buffer.android.buffertextinputlayout.util.DrawableUtils;
 import org.buffer.android.buffertextinputlayout.util.ThemeUtils;
 import org.buffer.android.buffertextinputlayout.util.ViewGroupUtils;
@@ -138,7 +140,7 @@ public class BufferTextInputLayout extends LinearLayout {
     private boolean counterVisible;
 
     private int charactersRemainingUntilCounterDisplay;
-    private TextInputType textInputType;
+    private CounterMode counterMode;
 
     public BufferTextInputLayout(Context context) {
         this(context, null);
@@ -192,7 +194,7 @@ public class BufferTextInputLayout extends LinearLayout {
         counterVisible = counterEnabled;
 
         int type = a.getInt(R.styleable.BufferTextInputLayout_textInputMode, 2);
-        textInputType = TextInputType.fromId(type);
+        counterMode = CounterMode.fromId(type);
 
         charactersRemainingUntilCounterDisplay = a.getInt(
                 R.styleable.BufferTextInputLayout_displayFromCount, getCounterMaxLength());
@@ -232,7 +234,32 @@ public class BufferTextInputLayout extends LinearLayout {
      */
     public void setCharactersRemainingUntilCounterDisplay(int remainingCharacters) {
         charactersRemainingUntilCounterDisplay = remainingCharacters;
-        updateLabelState(true);
+        setCounterVisible(counterVisible && editText.getText().length() >=
+                (getCounterMaxLength() - charactersRemainingUntilCounterDisplay));
+    }
+
+    /**
+     * Retrieve the value set for characters remaining until the counter is displayed
+     * @return  int the value set for remaining characters until the counter is displayed
+     */
+    public int getCharactersRemainingUntilCounterDisplay() {
+        return charactersRemainingUntilCounterDisplay;
+    }
+
+    /**
+     * Set the counter mode to be used when formatting the display of the text input counter.
+     */
+    public void setCounterMode(CounterMode counterMode) {
+        this.counterMode = counterMode;
+        setCounterText(editText.getText().length());
+    }
+
+    /**
+     * Retrieve the current counter mode set for the BufferTextInputLayout
+     * @return CounterMode the counter mode currently set
+     */
+    public CounterMode getCounterMode() {
+        return counterMode;
     }
 
     /**
@@ -278,8 +305,8 @@ public class BufferTextInputLayout extends LinearLayout {
         this.editText.addTextChangedListener(new TextWatcher() {
             @Override
             public void afterTextChanged(Editable s) {
-                setCounterVisible(counterVisible &&
-                        s.length() >= (getCounterMaxLength() - charactersRemainingUntilCounterDisplay));
+                setCounterVisible(counterVisible && s.length() >=
+                        (getCounterMaxLength() - charactersRemainingUntilCounterDisplay));
                 updateLabelState(true);
                 if (counterEnabled) {
                     updateCounter(s.length());
@@ -750,7 +777,7 @@ public class BufferTextInputLayout extends LinearLayout {
 
     void setCounterText(int length) {
         String text;
-        switch (textInputType) {
+        switch (counterMode) {
             case DESCENDING:
                 text = String.valueOf(counterMaxLength - length);
                 break;

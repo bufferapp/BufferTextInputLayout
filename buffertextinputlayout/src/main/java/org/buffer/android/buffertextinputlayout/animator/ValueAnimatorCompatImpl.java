@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.buffer.android.buffertextinputlayout;
+package org.buffer.android.buffertextinputlayout.animator;
 
 import android.animation.ValueAnimator;
 import android.view.animation.Interpolator;
