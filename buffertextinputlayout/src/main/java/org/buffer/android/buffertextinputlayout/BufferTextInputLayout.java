@@ -141,6 +141,7 @@ public class BufferTextInputLayout extends LinearLayout {
 
     private int charactersRemainingUntilCounterDisplay;
     private CounterMode counterMode;
+    private TextInputListener textInputListener;
 
     public BufferTextInputLayout(Context context) {
         this(context, null);
@@ -230,6 +231,28 @@ public class BufferTextInputLayout extends LinearLayout {
     }
 
     /**
+     * Manually update the enabled state of the input label
+     */
+    public void updateEnabledState(int contentLength) {
+        setCounterEnabled(contentLength >= (getCounterMaxLength() -
+                charactersRemainingUntilCounterDisplay));
+    }
+
+    /**
+     * Set a listener for when text changes in the edit text
+     */
+    public void setTextInputListener(TextInputListener textInputListener) {
+        this.textInputListener = textInputListener;
+    }
+
+    /**
+     * Manually set the counter length for the label
+     */
+    public void setCounterLength(int length) {
+        updateCounter(length);
+    }
+
+    /**
      * Set the count value that the counter labvel should be hidden until.
      */
     public void setCharactersRemainingUntilCounterDisplay(int remainingCharacters) {
@@ -311,6 +334,7 @@ public class BufferTextInputLayout extends LinearLayout {
                 if (counterEnabled) {
                     updateCounter(s.length());
                 }
+                if (textInputListener != null) textInputListener.onTextChanged(s.toString());
             }
 
             @Override
