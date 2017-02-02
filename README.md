@@ -1,6 +1,8 @@
 Buffer Text Input Layout
 -------------------------
 
+(Coming to maven central soon!)
+
 This is a simple customisation of the TextInputLayout found in the Design Support Library.
 
 Whilst this is an awesome component that we've made great use of, we wanted to be able to display
@@ -33,23 +35,24 @@ Hence why we created this simple component :)
 
 In exactly the same way as the support library! Simply wrap an edit text field like so:
 
-    <org.buffer.android.buffertextinputlayout.BufferTextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:counterEnabled="true"
-            app:counterMaxLength="10"
-            app:counterOverflowTextAppearance="@style/counterOverride"
-            app:counterTextAppearance="@style/counterText"
-            app:hintEnabled="true"
-            app:counterMode="ascending">
+```xml
+<org.buffer.android.buffertextinputlayout.BufferTextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:counterEnabled="true"
+        app:counterMaxLength="10"
+        app:counterOverflowTextAppearance="@style/counterOverride"
+        app:counterTextAppearance="@style/counterText"
+        app:hintEnabled="true"
+        app:counterMode="ascending">
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/text_hint" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/text_hint" />
 
-    </org.buffer.android.buffertextinputlayout.BufferTextInputLayout>
-
+</org.buffer.android.buffertextinputlayout.BufferTextInputLayout>
+```
 
 #Setting attributes via XML
 
@@ -60,8 +63,10 @@ In our XML layout, we can set two extra attributes for the BufferTextInputLayout
 
 e.g
 
-    app:displayFromCount="5"
-    app:counterMode="descending"
+```xml
+app:displayFromCount="5"
+app:counterMode="descending"
+```
 
 
 #Setting attributes programmatically
@@ -70,6 +75,7 @@ e.g
 - setCharactersRemainingUntilCounterDisplay(int remainingCharacters) -> Set the value for which how many characters should be remaining until the counter becomes visible
 
 e.g.
-
-    bufferTextInputLayout.setCounterMode(CounterMode.DESCENDING);
-    bufferTextInputLayout.setCharactersRemainingUntilCounterDisplay(40);
+```java
+bufferTextInputLayout.setCounterMode(CounterMode.DESCENDING);
+bufferTextInputLayout.setCharactersRemainingUntilCounterDisplay(40);
+```
