@@ -1,1 +1,1 @@
-include ':app', ':buffertextinputlayout', ':sample'
+include ':buffertextinputlayout', ':sample'
