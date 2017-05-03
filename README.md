@@ -13,25 +13,25 @@ the counter so that the value displayed was:
 
 Hence why we created this simple component :)
 
-##Ascending
+## Ascending
 
 ![Ascending](/art/ascending.gif)
 
-##Descending
+## Descending
 
 ![Descending](/art/descending.gif)
 
-##Standard
+## Standard
 
 ![Standard](/art/standard.gif)
 
 
-##Display when a given count away from the maximum value
+## Display when a given count away from the maximum value
 
 ![Hidden](/art/hidden.gif)
 
 
-#How to use
+# How to use
 
 In exactly the same way as the support library! Simply wrap an edit text field like so:
 
@@ -54,7 +54,7 @@ In exactly the same way as the support library! Simply wrap an edit text field l
 </org.buffer.android.buffertextinputlayout.BufferTextInputLayout>
 ```
 
-#Setting attributes via XML
+# Setting attributes via XML
 
 In our XML layout, we can set two extra attributes for the BufferTextInputLayout:
 
@@ -69,7 +69,7 @@ app:counterMode="descending"
 ```
 
 
-#Setting attributes programmatically
+# Setting attributes programmatically
 
 - setCounterMode(CounterMode counterMode) -> Set the mode in which the counter should use when being displayed (DESCENDING, ASCENDING, STANDARD)
 - setCharactersRemainingUntilCounterDisplay(int remainingCharacters) -> Set the value for which how many characters should be remaining until the counter becomes visible
