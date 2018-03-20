@@ -1,7 +1,8 @@
 Buffer Text Input Layout
 -------------------------
 
-(Coming to maven central soon!)
+~~(Coming to maven central soon!)~~
+Now available on Gradle. Check [**Installation**](https://github.com/wajahatkarim3/BufferTextInputLayout#installation) section.
 
 This is a simple customisation of the TextInputLayout found in the Design Support Library.
 
@@ -30,6 +31,22 @@ Hence why we created this simple component :)
 
 ![Hidden](/art/hidden.gif)
 
+# Installation
+
+## Gradle
+```groovy
+compile 'com.wajahatkarim3.BufferTextInputLayout:buffertextinputlayout:1.2.0'
+```
+
+## Maven
+```
+<dependency>
+  <groupId>com.wajahatkarim3.BufferTextInputLayout</groupId>
+  <artifactId>buffertextinputlayout</artifactId>
+  <version>1.2.0</version>
+  <type>pom</type>
+</dependency>
+```
 
 # How to use
 
