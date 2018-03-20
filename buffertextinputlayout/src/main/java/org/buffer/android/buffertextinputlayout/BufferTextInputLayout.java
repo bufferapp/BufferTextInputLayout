@@ -582,7 +582,7 @@ public class BufferTextInputLayout extends LinearLayout {
                     TextViewCompat.setTextAppearance(errorView,
                             android.support.v7.appcompat.R.style.TextAppearance_AppCompat_Caption);
                     errorView.setTextColor(ContextCompat.getColor(
-                            getContext(), R.color.design_textinput_error_color_light));
+                            getContext(), R.color.default_error_color));
                 }
                 errorView.setVisibility(INVISIBLE);
                 ViewCompat.setAccessibilityLiveRegion(errorView,
@@ -701,7 +701,7 @@ public class BufferTextInputLayout extends LinearLayout {
                     TextViewCompat.setTextAppearance(counterView,
                             android.support.v7.appcompat.R.style.TextAppearance_AppCompat_Caption);
                     counterView.setTextColor(ContextCompat.getColor(
-                            getContext(), R.color.design_textinput_error_color_light));
+                            getContext(), R.color.default_error_color));
                 }
                 addIndicator(counterView, -1);
                 if (editText == null) {
