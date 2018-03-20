@@ -1,4 +1,31 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.jfrog.bintray'
+apply plugin: 'com.github.dcendents.android-maven'
+
+ext {
+
+    bintrayRepo = "BufferTextInputLayout"
+    bintrayName = "com.wajahatkarim3.BufferTextInputLayout"
+
+    publishedGroupId = 'com.wajahatkarim3.BufferTextInputLayout'
+    libraryName = 'buffertextinputlayout'
+    artifact = 'buffertextinputlayout'
+
+    libraryDescription = 'A simple customised version of the TextInputLayout from the Android Design Support Library'
+
+    siteUrl = 'https://github.com/wajahatkarim3/BufferTextInputLayout'
+    gitUrl = 'https://github.com/wajahatkarim3/BufferTextInputLayout.git'
+
+    libraryVersion = '1.2.0'
+
+    developerId = 'buffer'
+    developerName = 'Buffer'
+    developerEmail = 'wajahatkarim3@gmail.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
 
 android {
     compileSdkVersion 27
@@ -24,4 +51,11 @@ dependencies {
     final SUPPORT_LIBRARY_VERSION = '27.0.2'
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile "com.android.support:design:$SUPPORT_LIBRARY_VERSION"
+}
+
+//Add these lines to publish library to bintray. This is the readymade scripts made by github user nuuneoi to make uploading to bintray easy.
+//Place it at the end of the file
+if (project.rootProject.file('local.properties').exists()) {
+    apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
+    apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'
 }
