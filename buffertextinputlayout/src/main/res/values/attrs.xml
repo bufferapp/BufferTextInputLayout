@@ -29,6 +29,10 @@
         </attr>
         <!-- The characters remaining value for which the counter should be displayed at -->
         <attr name="displayFromCount" format="integer" />
+        <attr name="hintCollapseBoundsMode" format="enum">
+            <enum name="defaultMode" value="0" />
+            <enum name="dicardDrawablePadding" value="1" />
+        </attr>
     </declare-styleable>
 
     <declare-styleable name="DesignTheme">

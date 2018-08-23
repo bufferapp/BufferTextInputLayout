@@ -21,14 +21,17 @@
             android:layout_marginBottom="28dp"
             app:counterEnabled="true"
             app:counterMaxLength="10"
+            app:counterMode="ascending"
             app:counterOverflowTextAppearance="@style/counterOverride"
             app:counterTextAppearance="@style/counterText"
-            app:hintEnabled="true"
-            app:counterMode="ascending">
+            app:hintCollapseBoundsMode="dicardDrawablePadding"
+            app:hintEnabled="true">
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:drawableLeft="@android:drawable/ic_input_add"
+                android:drawableStart="@android:drawable/ic_input_add"
                 android:hint="@string/text_hint" />
 
         </org.buffer.android.buffertextinputlayout.BufferTextInputLayout>
@@ -39,51 +42,16 @@
             android:layout_marginBottom="28dp"
             app:counterEnabled="true"
             app:counterMaxLength="10"
+            app:counterMode="descending"
             app:counterOverflowTextAppearance="@style/counterOverride"
             app:counterTextAppearance="@style/counterText"
-            app:hintEnabled="true"
-            app:counterMode="descending">
+            app:hintEnabled="true">
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/text_hint" />
-
-        </org.buffer.android.buffertextinputlayout.BufferTextInputLayout>
-
-        <org.buffer.android.buffertextinputlayout.BufferTextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="28dp"
-            app:counterEnabled="true"
-            app:counterMaxLength="100"
-            app:counterOverflowTextAppearance="@style/counterOverride"
-            app:counterTextAppearance="@style/counterText"
-            app:hintEnabled="true"
-            app:counterMode="standard">
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/text_hint" />
-
-        </org.buffer.android.buffertextinputlayout.BufferTextInputLayout>
-
-        <org.buffer.android.buffertextinputlayout.BufferTextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="28dp"
-            app:counterEnabled="true"
-            app:counterMaxLength="10"
-            app:counterOverflowTextAppearance="@style/counterOverride"
-            app:counterTextAppearance="@style/counterText"
-            app:hintEnabled="true"
-            app:displayFromCount="5"
-            app:counterMode="descending">
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:drawableLeft="@android:drawable/ic_input_add"
+                android:drawableStart="@android:drawable/ic_input_add"
                 android:hint="@string/text_hint" />
 
         </org.buffer.android.buffertextinputlayout.BufferTextInputLayout>

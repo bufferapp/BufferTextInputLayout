@@ -80,15 +80,15 @@ import org.buffer.android.buffertextinputlayout.util.ViewUtils;
 /**
  * A simple customisation of the {@link android.support.design.widget.TextInputLayout} from the
  * design support library.
- *
+ * <p>
  * The difference with the BufferTextInputLayout is that the counter can be displayed in three
  * different ways, being:
- *
+ * <p>
  * DESCENDING - Starting from the set maximum counter value, the counter will decrement in value
- *              as the user types
+ * as the user types
  * ASCENDING - Starting from 0, the counter will increment in value as the user types
  * STANDARD - Displayed in the same way as the design support library (default). E.g 10/100
- *
+ * <p>
  * As well as this, it is possible to set a value for charactersRemainingUntilCounterDisplay, this
  * value simply declares how many characters should be remaining until the counter becomes visible.
  * (Note, if this value is not set then the counter will always be visible).
@@ -141,6 +141,7 @@ public class BufferTextInputLayout extends LinearLayout {
 
     private int charactersRemainingUntilCounterDisplay;
     private CounterMode counterMode;
+    private HintCollapseMode collapseMode;
     private TextInputListener textInputListener;
 
     public BufferTextInputLayout(Context context) {
@@ -196,6 +197,9 @@ public class BufferTextInputLayout extends LinearLayout {
 
         counterMode = CounterMode.fromId(
                 a.getInt(R.styleable.BufferTextInputLayout_counterMode, 2));
+
+        collapseMode = HintCollapseMode.fromId(
+                a.getInt(R.styleable.BufferTextInputLayout_hintCollapseBoundsMode, 0));
 
         charactersRemainingUntilCounterDisplay = a.getInt(
                 R.styleable.BufferTextInputLayout_displayFromCount, getCounterMaxLength());
@@ -263,7 +267,8 @@ public class BufferTextInputLayout extends LinearLayout {
 
     /**
      * Retrieve the value set for characters remaining until the counter is displayed
-     * @return  int the value set for remaining characters until the counter is displayed
+     *
+     * @return int the value set for remaining characters until the counter is displayed
      */
     public int getCharactersRemainingUntilCounterDisplay() {
         return charactersRemainingUntilCounterDisplay;
@@ -279,6 +284,7 @@ public class BufferTextInputLayout extends LinearLayout {
 
     /**
      * Retrieve the current counter mode set for the BufferTextInputLayout
+     *
      * @return CounterMode the counter mode currently set
      */
     public CounterMode getCounterMode() {
@@ -1237,14 +1243,21 @@ public class BufferTextInputLayout extends LinearLayout {
         if (isHintEnabled && editText != null) {
             final Rect rect = tempRect;
             ViewGroupUtils.getDescendantRect(this, editText, rect);
+
             final int l = rect.left + editText.getCompoundPaddingLeft();
             final int r = rect.right - editText.getCompoundPaddingRight();
+
+            final int collapseLeft = collapseMode == HintCollapseMode.DISCARD_DRAWABLE_PADDING
+                    ? rect.left
+                    : l;
+
+
             collapsingTextHelper.setExpandedBounds(
                     l, rect.top + editText.getCompoundPaddingTop(),
                     r, rect.bottom - editText.getCompoundPaddingBottom());
             // Set the collapsed bounds to be the the full height (minus padding) to match the
             // EditText's editable area
-            collapsingTextHelper.setCollapsedBounds(l, getPaddingTop(),
+            collapsingTextHelper.setCollapsedBounds(collapseLeft, getPaddingTop(),
                     r, bottom - top - getPaddingBottom());
             collapsingTextHelper.recalculate();
         }
